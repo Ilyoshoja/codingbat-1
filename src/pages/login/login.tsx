@@ -6,6 +6,7 @@ interface LoginProps { }
 
 const Login: React.FC<LoginProps> = () => {
     const [showEye, setShowEye] = useState<boolean>(false);
+     
     return (
         <div className="loginSection">
             <h3>Sign In</h3>

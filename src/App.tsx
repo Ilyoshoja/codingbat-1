@@ -1,16 +1,21 @@
 import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Home, Problem, Login, Register,Subject } from "./pages";
+import { Home, Problem, Login, Register,Subject, Main} from "./pages";
 
 const App: FC = () => (
   <div>
     <Routes>
-      <Route path='' element={<Login />} />
-      <Route path='home' element={<Home />}>
+      
+      <Route path='' element={<Home />}>
+      <Route index element={<Login />} />
+      <Route path='register' element={<Register />} />
+      <Route path="main" element = {<Main/>}>
       <Route index element={<Subject />} />
       <Route path='problem' element={<Problem />} />
       </Route>
-      <Route path='register' element={<Register />} />
+      
+      </Route>
+      
    
     </Routes>
   </div>

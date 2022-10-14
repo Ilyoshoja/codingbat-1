@@ -3,10 +3,10 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import code from "../assets/img/Coding.svg"
-import bat from "../assets/img/BAT.svg"
-import java from "../assets/img/java-svgrepo-com 1.svg"
-import python from "../assets/img/python-svgrepo-com 1.svg"
+import code from "../../assets/img/Coding.svg"
+import bat from "../../assets/img/BAT.svg"
+import java from "../../assets/img/java-svgrepo-com 1.svg"
+import python from "../../assets/img/python-svgrepo-com 1.svg"
 import "./header.scss"
 import Offcanvas from 'react-bootstrap/Offcanvas';
 interface HeaderProps { }
