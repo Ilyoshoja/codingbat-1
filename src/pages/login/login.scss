@@ -5,15 +5,19 @@
   box-sizing: border-box;
   font-family: "Roboto Mono", monospace;
 }
-
-.loginSection {
-  width: 100%;
+body{
   height: 100vh;
   background: linear-gradient(
     rgba(5, 13, 33, 1),
     rgb(7, 73, 58),
     rgba(5, 13, 33, 1)
   );
+}
+
+.loginSection {
+  width: 100%;
+  height: 100vh;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,6 +124,7 @@
       color: white;
       background: #2db97c;
       border-radius: 10px;
+      font-size: 16px;
     }
     button:hover{
       background: #23de8d;
