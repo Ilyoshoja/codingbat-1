@@ -39,9 +39,9 @@ const Header: React.FC<HeaderProps> = () => {
             <Nav.Link id="links" href="#features">Prefs</Nav.Link>
           </Nav>
 
-          <Nav className="navLinks gap-3">
-          <Link to={'/register'} className="btnDark">Sign Up</Link >
-            <Link to={'/login'} className="btnGreen">Sign In</Link >
+          <Nav className="navLinks gap-3" >
+            <Link to={'/register'} id="btnDark">Sign Up</Link >
+            <Link to={'/login'} id="btnGreen">Sign In</Link >
           </Nav>
 
           <Nav className="hamburger" onClick={handleShow}>
@@ -54,12 +54,12 @@ const Header: React.FC<HeaderProps> = () => {
       <div className="logoNav">
         <div className="technologies">
 
-          <div className= {isActive ? 'techIcons active' : "techIcons"}  onClick ={()=> setIsActive(true)}>
+          <div className={isActive ? 'techIcons active' : "techIcons"} onClick={() => setIsActive(true)}>
             <img src={java} alt="404" />
             <p>Java</p>
           </div>
 
-          <div className= {isActive ? 'techIcons' : " techIcons active"} onClick ={()=> setIsActive(false)}>
+          <div className={isActive ? 'techIcons' : " techIcons active"} onClick={() => setIsActive(false)}>
             <img src={python} alt="404" />
             <p>Python</p>
           </div>
@@ -70,16 +70,16 @@ const Header: React.FC<HeaderProps> = () => {
       <Offcanvas show={show} onHide={handleClose} backdrop="static" id="offcanvas">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
-          <Navbar.Brand href="#home" id="navBrand">
-            <div className="logo">
-              <img src={code} alt="404" width={123} height={16} />
-              <img src={bat} alt="404" width={70} height={16} />
-            </div>
-          </Navbar.Brand>
+            <Navbar.Brand href="#home" id="navBrand">
+              <div className="logo">
+                <img src={code} alt="404" width={123} height={16} />
+                <img src={bat} alt="404" width={70} height={16} />
+              </div>
+            </Navbar.Brand>
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="d-flex justify-content-around flex-column" >
-          <Nav  className="d-flex align-items-center justify-content-between flex-column" style={{height:"50%"}}>
+          <Nav className="d-flex align-items-center justify-content-between flex-column" style={{ height: "50%" }}>
             <Nav.Link id="links" href="#home">About</Nav.Link>
             <Nav.Link id="links" href="#features">Help</Nav.Link>
             <Nav.Link id="links" href="#pricing">Code help+videos</Nav.Link>
@@ -88,14 +88,14 @@ const Header: React.FC<HeaderProps> = () => {
           </Nav>
 
           <Nav className="d-flex justify-content-around ">
-            <Link to={'/register'} className="btnDark">Sign Up</Link >
-            <Link to={'/login'} className="btnGreen">Sign Up</Link >
+            <Link to={'/register'} id="btnDark">Sign Up</Link >
+            <Link to={'/login'} id="btnGreen">Sign Up</Link >
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
 
 
-      
+
 
 
     </>

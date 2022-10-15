@@ -13,18 +13,18 @@
     gap: 20px;
   }
 
-  .btnDark {
+  #btnDark {
     background: rgb(8, 41, 56);
     border: 1px solid #263c47;
   }
-  .btnDark:hover {
+  #btnDark:hover {
     background: rgb(11, 64, 88);
   }
-  .btnGreen {
+  #btnGreen {
     background: #2db97c;
     border: none;
   }
-  .btnGreen:hover {
+  #btnGreen:hover {
     background: #3fc88d;
   }
 
@@ -43,8 +43,8 @@
   color: white;
 }
 
-.btnDark,
-.btnGreen {
+#btnDark,
+#btnGreen {
   width: 133px;
   height: 48px;
   color: white;
@@ -61,19 +61,30 @@
   button {
     background-color: white;
   }
-  .btnDark {
-    background: rgb(8, 41, 56);
-    border: 1px solid #263c47;
+  #btnDark,#btnGreen {
+  width: 133px;
+  height: 48px;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
-  .btnDark:hover {
+  #btnDark{
+    background: rgb(8, 41, 56);
+    color: white;
+  }
+  #btnDark:hover {
     background: rgb(11, 64, 88);
     color: white;
   }
-  .btnGreen {
+  #btnGreen {
     background: #2db97c;
     border: none;
   }
-  .btnGreen:hover {
+  #btnGreen:hover {
     background: #3fc88d;
     color: white;
   }
