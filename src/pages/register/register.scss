@@ -30,7 +30,7 @@
     margin-top: 2%;
     box-sizing: border-box;
     width: 877px;
-    height: 596px;
+    height: 446px;
     position: relative;
     background: rgba(217, 217, 217, 0.03);
     border-radius: 10px;
@@ -48,7 +48,7 @@
       font-weight: 700;
       font-size: 12px;
       line-height: 15px;
-      bottom: 15%;
+      bottom: 30%;
       right: 28%;
       cursor: pointer;
 
@@ -99,6 +99,7 @@
         height: 55px;
         color: #4f728e;
         background: rgba(217, 217, 217, 0.03);
+        border-color: rgba(217, 217, 217, 0.03);
         border-radius: 10px;
         padding: 0 40px;
         /* Inside auto layout */
@@ -187,7 +188,7 @@
       }
 
       a {
-        bottom: 15%;
+        bottom: 30%;
         right: 0%;
         left: 0;
         margin: 0 auto;
@@ -228,7 +229,7 @@
       }
 
       a {
-        bottom: 12%;
+        bottom: 30%;
         right: 0%;
         left: 0;
         margin: 0 auto;

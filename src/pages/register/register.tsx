@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./register.scss"
-import { AiOutlineEyeInvisible, AiOutlineEye, AiOutlineUser, AiFillLock, AiOutlineMail } from "react-icons/ai";
+import { AiOutlineEyeInvisible, AiOutlineEye, AiOutlineUser, AiFillLock } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { UserInterface } from "../../types/interface";
 interface RegisterProps { }
@@ -8,8 +8,8 @@ interface RegisterProps { }
 const Register: React.FC<RegisterProps> = () => {
     const [showEye, setShowEye] = useState<boolean>(false);
     const [newUser, setNewUser] = useState<UserInterface>({
-        name: "",
-        email: "",
+
+
         password: "",
         username: '',
     })
@@ -25,8 +25,7 @@ const Register: React.FC<RegisterProps> = () => {
         e.preventDefault();
         setUserArr([...userArr, newUser]);
         setNewUser({
-            name: "",
-            email: "",
+
             password: "",
             username: '',
         })
@@ -37,16 +36,7 @@ const Register: React.FC<RegisterProps> = () => {
             <h3>Register</h3>
 
             <form onSubmit={handleSubmit}>
-                <div className="inputBox">
-                    <label>Full Name</label>
-                    <div>
-                        <i className="userIcon">
-                            <AiOutlineUser />
-                        </i>
-                        <input type="text" name="name" onChange={handleChange} value={newUser.name || ""} placeholder="Please Enter Here " />
-                    </div>
 
-                </div>
 
                 <div className="inputBox">
                     <label>Username</label>
@@ -59,16 +49,6 @@ const Register: React.FC<RegisterProps> = () => {
 
                 </div>
 
-                <div className="inputBox">
-                    <label>Email</label>
-                    <div>
-                        <i className="userIcon">
-                            <AiOutlineMail />
-                        </i>
-                        <input type="email" name="email" onChange={handleChange} value={newUser.email || ""} placeholder="@gmail.com" />
-                    </div>
-
-                </div>
 
 
                 <div className="inputBox">
@@ -83,16 +63,15 @@ const Register: React.FC<RegisterProps> = () => {
                             }
 
                         </i>
+                        
                     </div>
 
 
                 </div>
-                <Link to={'/'}>Already have an Account ?</Link>
+                <Link to={'/login'}>Already have an Account ?</Link>
 
 
                 <button disabled={
-                    !newUser.name ||
-                    !newUser.email ||
                     !newUser.username ||
                     !newUser.password ||
                     newUser.password.length < 8
