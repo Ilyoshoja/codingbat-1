@@ -40,7 +40,7 @@ const Login: React.FC<LoginProps> = () => {
 
 
                 </div>
-                <Link to={"register"}>Need help to login ?</Link>
+                <Link to={"/register"}>Need help to login ?</Link>
 
 
                 <button>Login</button>
