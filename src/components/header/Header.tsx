@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = () => {
 
           <Nav className="navLinks gap-3">
           <Link to={'/register'} className="btnDark">Sign Up</Link >
-            <Link to={'/login'} className="btnGreen">Sign Up</Link >
+            <Link to={'/login'} className="btnGreen">Sign In</Link >
           </Nav>
 
           <Nav className="hamburger" onClick={handleShow}>
