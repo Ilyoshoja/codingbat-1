@@ -88,9 +88,12 @@
     height: 100px;
     display: flex;
     justify-content: space-evenly;
+
     .active {
       border: 1px solid #2db97c;
     }
+
+    
     div {
       cursor: pointer;
       display: flex;
