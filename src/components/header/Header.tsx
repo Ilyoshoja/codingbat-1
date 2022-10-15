@@ -9,6 +9,7 @@ import java from "../../assets/img/java-svgrepo-com 1.svg"
 import python from "../../assets/img/python-svgrepo-com 1.svg"
 import "./header.scss"
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { Link } from "react-router-dom";
 interface HeaderProps { }
 
 const Header: React.FC<HeaderProps> = () => {
@@ -86,8 +87,8 @@ const Header: React.FC<HeaderProps> = () => {
           </Nav>
 
           <Nav className="d-flex justify-content-around ">
-            <button className="btnDark">Sign Up</button>
-            <button className="btnGreen">Sign Up</button>
+            <Link to={'/register'} className="btnDark">Sign Up</Link >
+            <Link to={'/login'} className="btnGreen">Sign Up</Link >
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
