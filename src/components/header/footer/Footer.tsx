@@ -35,7 +35,7 @@ function Footer() {
                 </div>
 
                 <div className="footerBox">
-                    <h3>Java Help</h3>
+                    <h3>Misc Code Practice</h3>
                     <p> Code Badges</p>
                     <p>Introduction to Mod (video)</p>
                     <p>MakeBricks problem and solution (video x 2)</p>
