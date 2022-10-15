@@ -77,7 +77,7 @@ function Subject() {
                 </div>
               </div>
 
-              <p className='text'>{subject.text}</p>
+              <p className='text' id='text'>{subject.text}</p>
               <div className="taskBox">
                 <i id='trophy'><GiTrophyCup /></i>
                 <p>Task</p>

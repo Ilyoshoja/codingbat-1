@@ -5,7 +5,7 @@
   box-sizing: border-box;
   font-family: "Roboto Mono", monospace;
 }
-body{
+body {
   height: 100vh;
   background: linear-gradient(
     rgba(5, 13, 33, 1),
@@ -17,7 +17,6 @@ body{
 .loginSection {
   width: 100%;
   height: 100vh;
-  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,8 +125,110 @@ body{
       border-radius: 10px;
       font-size: 16px;
     }
-    button:hover{
+    button:hover {
       background: #23de8d;
+    }
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 885px) {
+  .loginSection {
+    form {
+      width: 690px;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 700px) {
+  .loginSection {
+    h3 {
+      position: absolute;
+      top: 15%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+    }
+    form {
+      width: 500px;
+    }
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 500px) {
+  .loginSection {
+    h3 {
+      position: absolute;
+      top: 10%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+    }
+    form {
+      width: 400px;
+      .inputBox {
+        width: 90%;
+        input {
+          width: 100%;
+        }
+      }
+
+      a {
+        bottom: 30%;
+        right: 0%;
+        left: 0;
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 400px) {
+  .loginSection {
+    h3 {
+      position: absolute;
+      top: 10%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+    }
+    form {
+      width: 300px;
+      .inputBox {
+        width: 90%;
+        div {
+          .userIcon,
+          .lockIcon,
+           #eyeIcon {
+            font-size: 20px;
+            top: 15%;
+          }
+        }
+        input {
+          width: 100%;
+          height: 40px;
+          font-size: 14px;
+        }
+      }
+
+      a {
+        bottom: 30%;
+        right: 0%;
+        left: 0;
+        margin: 0 auto;
+        text-align: center;
+      }
+      button {
+        width: 90%;
+        height: 30px;
+        font-size: 14px;
+      }
     }
   }
 }

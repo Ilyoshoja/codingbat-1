@@ -14,6 +14,8 @@ const Register: React.FC<RegisterProps> = () => {
         username: '',
     })
 
+    const [userArr, setUserArr] = useState<UserInterface[]>([]);
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setNewUser({ ...newUser, [e.target.name]: e.target.value })
     }
@@ -21,7 +23,13 @@ const Register: React.FC<RegisterProps> = () => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
+        setUserArr([...userArr, newUser]);
+        setNewUser({
+            name: "",
+            email: "",
+            password: "",
+            username: '',
+        })
     }
 
     return (

@@ -3,6 +3,8 @@
   align-items: center;
   box-sizing: border-box;
   border-bottom: 1px solid #1a2334;
+  height: 80px;
+
   #navLinks,
   .gap-3 {
     display: flex;
@@ -127,6 +129,25 @@ button {
       position: absolute;
       display: flex;
       right: 5%;
+    }
+  }
+}
+
+@media screen and (max-width:420px){
+  #navbar{
+    #container{
+      #navBrand{
+        display: none;
+      }
+    }
+  }
+
+  .logoNav{
+    .technologies{
+      width: 60%;
+      padding: 0 0;
+      margin: auto;
+    
     }
   }
 }

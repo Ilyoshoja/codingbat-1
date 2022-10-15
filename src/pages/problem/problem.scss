@@ -50,3 +50,17 @@
     }
   }
 }
+
+@media screen and (max-width: 450px) {
+  .problemSection{
+    .problemCard{
+      .cardTitle{
+        flex-wrap: wrap;
+        justify-content: center;
+        .title{
+          width: 205px;
+        }
+      }
+    }
+  }
+}

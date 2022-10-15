@@ -23,7 +23,7 @@
       gap: 30px;
       padding: 20px 30px;
       width: 585px;
-      height: 700px;
+      height: 508px;
       background: rgba(217, 217, 217, 0.03);
       border-radius: 10px;
       font-weight: 700;
@@ -43,6 +43,7 @@
       }
       p {
         cursor: pointer;
+        height: 10px;
       }
       h3 {
         font-size: 24px;
@@ -63,6 +64,172 @@
     line-height: 28px;
     span {
       color: #3fc88d;
+    }
+  }
+}
+
+
+@media screen and (min-width:895px)and (max-width: 1185px) {
+  .footerContainer{
+    .footerBoxes{
+      .footerBox{
+        width: 40%;
+        p{
+          
+          font-size: 10px;
+        }
+        .quesitons{
+          height: 100%;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+
+@media screen and (min-width:750px)and (max-width: 895px) {
+  .footerContainer{
+    .footerBoxes{
+      .footerBox{
+        width: 40%;
+        gap: 0;
+        h3{
+          font-size: 14px;
+        }
+        p{
+          font-size: 9px;
+        }
+        .quesitons{
+         
+          height: 40%;
+          font-size: 10px;
+          gap: 5px;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width:700px)and (max-width: 750px) {
+  .footerContainer{
+    .footerBoxes{
+      .footerBox{
+        width: 40%;
+        gap: 0;
+        h3{
+          font-size: 14px;
+        }
+        p{
+          font-size: 8px;
+        }
+        .quesitons{
+         
+          height: 40%;
+          font-size: 10px;
+          gap: 5px;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width:528px)and (max-width: 700px) {
+  .footerContainer{
+    .footerBoxes{
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      .footerBox{
+        width: 90%;
+        gap: 0;
+        h3{
+          font-size: 14px;
+        }
+        p{
+          font-size: 14px;
+        }
+        .quesitons{
+          width: 100%;
+          height: 40%;
+          font-size: 10px;
+          gap: 5px;
+        }
+      }
+    }
+  }
+}
+
+
+
+@media screen and (min-width:357px)and (max-width: 528px) {
+  .footerContainer{
+  
+    .footerBoxes{
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      .footerBox{
+        width: 90%;
+        gap: 0;
+        h3{
+          font-size: 14px;
+        }
+        p{
+          font-size: 10px;
+        }
+        .quesitons{
+          width: 100%;
+          height: 40%;
+          font-size: 10px;
+          gap: 5px;
+        }
+      }
+    }
+
+    
+  }
+}
+
+
+
+@media screen and (min-width:300px)and (max-width: 357px) {
+  .footerContainer{
+    width: 90%;
+    margin: auto;
+    .footerBoxes{
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      .footerBox{
+        width: 90%;
+        // height: auto;
+        gap: 0;
+        h3{
+          font-size: 14px;
+        }
+        p{
+          font-size: 6px;
+          height: 12px;
+          width: 180px;
+          
+        }
+        .quesitons{
+          width: 100%;
+         
+          font-size: 10px;
+          gap: 5px;
+        }
+      }
+    }
+    h4{
+      font-size: 10px;
     }
   }
 }
