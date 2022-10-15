@@ -84,11 +84,11 @@
   }
 
   .pagination {
-    width: 400px;
+    width: 250px;
     height: 100px;
     display: flex;
     justify-content: space-evenly;
-
+    margin-left: 35px;
     .active {
       border: 1px solid #2db97c;
     }
