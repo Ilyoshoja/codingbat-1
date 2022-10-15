@@ -14,7 +14,8 @@ interface HeaderProps { }
 
 const Header: React.FC<HeaderProps> = () => {
   const [show, setShow] = useState(false);
-
+  // const active = 'active';
+  const [isActive, setIsActive] = useState(true);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
@@ -39,8 +40,8 @@ const Header: React.FC<HeaderProps> = () => {
           </Nav>
 
           <Nav className="navLinks gap-3">
-            <button className="btnDark">Sign Up</button>
-            <button className="btnGreen">Sign Up</button>
+          <Link to={'/register'} className="btnDark">Sign Up</Link >
+            <Link to={'/login'} className="btnGreen">Sign Up</Link >
           </Nav>
 
           <Nav className="hamburger" onClick={handleShow}>
@@ -53,12 +54,12 @@ const Header: React.FC<HeaderProps> = () => {
       <div className="logoNav">
         <div className="technologies">
 
-          <div className="techIcons">
+          <div className= {isActive ? 'techIcons active' : "techIcons"}  onClick ={()=> setIsActive(true)}>
             <img src={java} alt="404" />
             <p>Java</p>
           </div>
 
-          <div className="techIcons">
+          <div className= {isActive ? 'techIcons' : " techIcons active"} onClick ={()=> setIsActive(false)}>
             <img src={python} alt="404" />
             <p>Python</p>
           </div>
