@@ -89,7 +89,7 @@ const Login: React.FC = () => {
 
 
                 </div>
-                <Link to={"/register"}>Need help to login ?</Link>
+                <Link to={"/register"}>Haven't account yet?</Link>
 
 
                 <button disabled={
