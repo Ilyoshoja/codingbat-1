@@ -1,10 +1,10 @@
-#navbar {
+.navbar {
   width: 100%;
   align-items: center;
   box-sizing: border-box;
   border-bottom: 1px solid #1a2334;
   height: 80px;
-  #brand {
+  .brand {
     font-size: 16px;
   }
   #links,
@@ -39,10 +39,13 @@
     }
   }
 }
-#links {
+.link{
   color: white;
 }
 
+.link:hover{
+  color: #2db97c;
+}
 #btndark,
 #btngreen {
   width: 133px;
@@ -60,6 +63,13 @@
   background: rgba(5, 13, 33, 1);
   button {
     background-color: white;
+  }
+
+  .logo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: none;
   }
   #btndark,#btngreen {
   width: 133px;
@@ -136,13 +146,13 @@
 }
 
 @media screen and (max-width: 1200px) {
-  #navbar {
+  .navbar {
     position: relative;
     #links,
-    .gap-3 {
+    #gap-3 {
       display: none;
     }
-    #brand {
+    .brand {
       position: absolute;
       left: 15%;
     }
@@ -156,7 +166,7 @@
 
 @media screen and (max-width: 420px) {
   .navbar {
-    .container {
+    #container {
       .brand {
         display: none;
       }

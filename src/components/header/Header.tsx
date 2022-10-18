@@ -21,9 +21,9 @@ const Header: React.FC = () => {
   return (
     <header>
 
-      <Navbar variant="dark" id={cls["navbar"]}>
+      <Navbar variant="dark" className={cls.navbar}>
         <Container className="d-flex justify-content-around" id={cls["container"]}>
-          <Navbar.Brand id={cls["brand"]}>
+          <Navbar.Brand className={cls.brand}>
             <div className="logo">
               <img src={code} alt="404" width={123} height={16} />
               <img src={bat} alt="404" width={70} height={16} />
@@ -31,20 +31,20 @@ const Header: React.FC = () => {
             <p>Code Practice</p>
           </Navbar.Brand>
 
-          <Nav id="navLinks">
-            <Nav.Link id={cls['links']} >About</Nav.Link>
-            <Nav.Link id={cls['links']} >Help</Nav.Link>
-            <Nav.Link id={cls['links']} >Code help+videos</Nav.Link>
-            <Nav.Link id={cls['links']} >Done</Nav.Link>
-            <Nav.Link id={cls['links']} >Prefs</Nav.Link>
+          <Nav id={cls['links']}>
+            <Nav.Link className={cls.link} >About</Nav.Link>
+            <Nav.Link className={cls.link} >Help</Nav.Link>
+            <Nav.Link className={cls.link} >Code help+videos</Nav.Link>
+            <Nav.Link className={cls.link} >Done</Nav.Link>
+            <Nav.Link className={cls.link} >Prefs</Nav.Link>
           </Nav>
 
-          <Nav className="navLinks gap-3" id={cls['gap-3']} >
+          <Nav className={`${cls.link}`} id={cls['gap-3']} >
             <Link to={'/register'} id={cls["btndark"]}  >Sign Up</Link >
             <Link to={'/login'} id={cls["btngreen"]} >Sign In</Link >
           </Nav>
 
-          <Nav className={cls.container} onClick={handleShow}>
+          <Nav className={cls.hamburger} onClick={handleShow}>
             <div></div>
             <div></div>
             <div></div>
@@ -70,7 +70,7 @@ const Header: React.FC = () => {
       <Offcanvas show={show} onHide={handleClose} backdrop="static" id={cls["offcanvas"]}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
-            <Navbar.Brand id={cls["brand"]}>
+            <Navbar.Brand  className={cls.brand}>
               <div className={cls.logo}>
                 <img src={code} alt="404" width={123} height={16} />
                 <img src={bat} alt="404" width={70} height={16} />
@@ -80,11 +80,11 @@ const Header: React.FC = () => {
         </Offcanvas.Header>
         <Offcanvas.Body className="d-flex justify-content-around flex-column" >
           <Nav className="d-flex align-items-center justify-content-between flex-column" style={{ height: "50%" }}>
-            <Nav.Link id={cls['links']} >About</Nav.Link>
-            <Nav.Link id={cls['links']} href="#features">Help</Nav.Link>
-            <Nav.Link id={cls['links']} href="#pricing">Code help+videos</Nav.Link>
-            <Nav.Link id={cls['links']} >Done</Nav.Link>
-            <Nav.Link id={cls['links']} href="#features">Prefs</Nav.Link>
+            <Nav.Link className={cls.link} >About</Nav.Link>
+            <Nav.Link className={cls.link} href="#features">Help</Nav.Link>
+            <Nav.Link className={cls.link} href="#pricing">Code help+videos</Nav.Link>
+            <Nav.Link className={cls.link} >Done</Nav.Link>
+            <Nav.Link className={cls.link} href="#features">Prefs</Nav.Link>
           </Nav>
 
           <Nav className="d-flex justify-content-around ">
