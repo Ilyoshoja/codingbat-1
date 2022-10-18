@@ -1,9 +1,19 @@
-import React from 'react'
+import { FC } from "react";
+import { Route, Routes } from "react-router-dom";
+import { Problem, Login, Register, Subject, Main } from "./pages";
 
-function App() {
-  return (
-    <div>App</div>
-  )
-}
+const App: FC = () => (
+  <div>
+    <Routes>
+      <Route path="" element={<Main />}>
+        <Route index element={<Subject />} />
+        <Route path='problem' element={<Problem />} />
+      </Route>
+      <Route path="login" element={<Login />} />
+      <Route path='register' element={<Register />} />
 
-export default App
+    </Routes>
+  </div>
+);
+
+export default App;
