@@ -1,33 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto Mono", monospace;
 }
-
-.registerSection {
-  width: 100%;
+body {
   height: 100vh;
   background: linear-gradient(
     rgba(5, 13, 33, 1),
     rgb(7, 73, 58),
     rgba(5, 13, 33, 1)
   );
+}
+
+.registerSection {
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  gap: 20px;
+  gap: 10px;
   h3 {
     position: absolute;
-    top: 5%;
+    top: 15%;
     left: 22%;
     text-align: start;
     color: white;
   }
   form {
-    margin-top: 2%;
     box-sizing: border-box;
     width: 877px;
     height: 446px;
@@ -37,7 +40,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -126,24 +129,11 @@
     button:hover {
       background: #23de8d;
     }
-    button:disabled {
-      cursor: not-allowed;
-    }
   }
 }
 
-
 @media screen and (min-width: 700px) and (max-width: 885px) {
   .registerSection {
-    h3 {
-      position: absolute;
-      top: 0%;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      text-align: center;
-      color: white;
-    }
     form {
       width: 690px;
     }
@@ -154,7 +144,7 @@
   .registerSection {
     h3 {
       position: absolute;
-      top: 0%;
+      top: 15%;
       left: 0;
       right: 0;
       margin: 0 auto;
@@ -171,7 +161,7 @@
   .registerSection {
     h3 {
       position: absolute;
-      top: 0%;
+      top: 10%;
       left: 0;
       right: 0;
       margin: 0 auto;
@@ -202,7 +192,7 @@
   .registerSection {
     h3 {
       position: absolute;
-      top: 0%;
+      top: 10%;
       left: 0;
       right: 0;
       margin: 0 auto;
@@ -216,7 +206,7 @@
         div {
           .userIcon,
           .lockIcon,
-           #eyeIcon {
+          #eyeIcon {
             font-size: 20px;
             top: 15%;
           }
