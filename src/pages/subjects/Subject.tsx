@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Subjects } from '../../types/interface'
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { GiTrophyCup } from "react-icons/gi";
-import "./subject.scss"
+import cls from "./subject.module.scss"
 function Subject() {
 
   const [arr, setArr] = useState<Subjects[]>(
@@ -55,31 +55,31 @@ function Subject() {
       },
 
     ])
-  const active = "active"
+  
   const [isActive, setIsActive] = useState(true);
   console.log(setArr);
 
   return (
-    <div className="subjectContainer">
-      <div className="subjectsBox">
+    <div className={cls.subject}>
+      <div className={cls.box}>
         {arr.map((subject, index) => {
           return (
-            <div className="subjectCard" key={index}>
-              <div className="title">
+            <div className={cls.card} key={index}>
+              <div className={cls.title}>
                 <h3>{subject.title}</h3>
-                <div className="starBox">
-                  <i id='filedIcon'><AiFillStar /></i>
-                  <i id='filedIcon'><AiFillStar /></i>
-                  <i id='filedIcon'><AiFillStar /></i>
-                  <i id='filedIcon'><AiFillStar /></i>
-                  <i id='unfilled'><AiOutlineStar /></i>
+                <div>
+                  <i className={cls.filledIcon}><AiFillStar /></i>
+                  <i className={cls.filledIcon}><AiFillStar /></i>
+                  <i className={cls.filledIcon}><AiFillStar /></i>
+                  <i className={cls.filledIcon}><AiFillStar /></i>
+                  <i className={cls.unfilled}><AiOutlineStar /></i>
 
                 </div>
               </div>
 
-              <p className='text' id='text'>{subject.text}</p>
-              <div className="taskBox">
-                <i id='trophy'><GiTrophyCup /></i>
+              <p className={cls.text} >{subject.text}</p>
+              <div className={cls.task}>
+                <i className={cls.trophy}><GiTrophyCup /></i>
                 <p>Task</p>
               </div>
             </div>
@@ -87,11 +87,11 @@ function Subject() {
         })}
       </div>
 
-      <div className="pagination">
-        <div onClick={() => setIsActive(true)} className="arrows">{`<<`}</div>
-        <div className={isActive ? active : ""} onClick={() => setIsActive(true)}>1</div>
-        <div className={isActive ? "" : active} onClick={() => setIsActive(false)}>2</div>
-        <div onClick={() => setIsActive(false)} className="arrows">{">>"}</div>
+      <div className={cls.pagination}>
+        <div onClick={() => setIsActive(true)} className={cls.arrows}>{`<<`}</div>
+        <div className={isActive ? cls.active : ""} onClick={() => setIsActive(true)}>1</div>
+        <div className={isActive ? "" : cls.active} onClick={() => setIsActive(false)}>2</div>
+        <div onClick={() => setIsActive(false)} className={cls.arrows}>{">>"}</div>
 
       </div>
 

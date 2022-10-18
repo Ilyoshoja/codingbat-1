@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import './login.scss'
+import cls from './login.module.scss'
 import { AiOutlineEyeInvisible, AiOutlineEye, AiOutlineUser, AiFillLock } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { UserInterface } from "../../types/interface";
 import { AxiosResponse } from "axios";
-import { http } from "../../server"
-
-
-
+import { http } from "../../server/server"
 interface ILogin {
     success: boolean;
     message: string;
@@ -40,28 +37,34 @@ const Login: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-       
 
- 
+
+
         const { data }: AxiosResponse<ILogin> = (await http.post(
             "/auth/sign-in",
             { email: user.email, password: user.password },
         ))
 
+        setuser({
+
+            password: "",
+            email: '',
+        })
+
         console.log(data.data.accessToken);
-        
+
 
     }
 
     return (
-        <div className="loginSection">
+        <div className={cls.login}>
             <h3>Sign In</h3>
 
             <form onSubmit={handleSubmit}>
-                <div className="inputBox">
+                <div className={cls.box}>
                     <label>Username</label>
                     <div>
-                        <i className="userIcon">
+                        <i className={cls.icon}>
                             <AiOutlineUser />
                         </i>
                         <input type="email" name="email" onChange={handleChange} value={user.email || ""} placeholder="Please Enter Here " />
@@ -70,12 +73,12 @@ const Login: React.FC = () => {
                 </div>
 
 
-                <div className="inputBox">
+                <div className={cls.box}>
                     <label>Password</label>
                     <div>
-                        <i className="lockIcon"><AiFillLock /></i>
+                        <i className={cls.icon}><AiFillLock /></i>
                         <input type={showEye ? "text" : "password"} name="password" onChange={handleChange} value={user.password || ""} placeholder="***********" />
-                        <i id="eyeIcon" onClick={() => setShowEye(!showEye)}>
+                        <i className={cls.eyeIcon} onClick={() => setShowEye(!showEye)}>
                             {
                                 showEye ? < AiOutlineEye /> : <AiOutlineEyeInvisible />
 
@@ -89,7 +92,11 @@ const Login: React.FC = () => {
                 <Link to={"/register"}>Need help to login ?</Link>
 
 
-                <button>Login</button>
+                <button disabled={
+                    !user.email ||
+                    !user.password ||
+                    user.password.length < 8
+                }  >Sign In</button>
             </form>
 
         </div>

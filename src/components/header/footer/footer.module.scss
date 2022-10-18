@@ -1,10 +1,5 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 
-.footerContainer {
+footer {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -13,11 +8,11 @@
   color: white;
   position: absolute;
   top: 100%;
-  .footerBoxes {
+  .boxes {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    .footerBox {
+    .inner {
       display: flex;
       flex-direction: column;
       gap: 30px;
@@ -70,9 +65,9 @@
 
 
 @media screen and (min-width:895px)and (max-width: 1185px) {
-  .footerContainer{
-    .footerBoxes{
-      .footerBox{
+  footer{
+    .boxes{
+      .innner{
         width: 40%;
         p{
           
@@ -90,9 +85,9 @@
 
 
 @media screen and (min-width:750px)and (max-width: 895px) {
-  .footerContainer{
-    .footerBoxes{
-      .footerBox{
+  footer{
+    .boxes{
+      .inner{
         width: 40%;
         gap: 0;
         h3{
@@ -114,9 +109,9 @@
 
 
 @media screen and (min-width:700px)and (max-width: 750px) {
-  .footerContainer{
-    .footerBoxes{
-      .footerBox{
+  footer{
+    .boxes{
+      .inner{
         width: 40%;
         gap: 0;
         h3{
@@ -138,13 +133,13 @@
 
 
 @media screen and (min-width:528px)and (max-width: 700px) {
-  .footerContainer{
-    .footerBoxes{
+  footer{
+   .boxes{
       width: 100%;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      .footerBox{
+    .inner{
         width: 90%;
         gap: 0;
         h3{
@@ -167,14 +162,14 @@
 
 
 @media screen and (min-width:357px)and (max-width: 528px) {
-  .footerContainer{
+  footer{
   
-    .footerBoxes{
+   .boxes{
       width: 100%;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      .footerBox{
+    .inner{
         width: 90%;
         gap: 0;
         h3{
@@ -199,15 +194,15 @@
 
 
 @media screen and (min-width:300px)and (max-width: 357px) {
-  .footerContainer{
+  footer{
     width: 90%;
     margin: auto;
-    .footerBoxes{
+   .boxes{
       width: 100%;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      .footerBox{
+    .inner{
         width: 90%;
         // height: auto;
         gap: 0;

@@ -1,15 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap");
-
-body {
-  height: 100vh;
-  background: linear-gradient(
-    rgba(5, 13, 33, 1),
-    rgb(7, 73, 58),
-    rgba(5, 13, 33, 1)
-  );
-}
-
-.loginSection {
+.register {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -56,7 +45,7 @@ body {
 
       color: #4f728e;
     }
-    .inputBox {
+    .box {
       display: flex;
       flex-direction: column;
       text-align: start;
@@ -73,19 +62,17 @@ body {
         width: 100%;
         position: relative;
         display: flex;
-        .userIcon,
-        .lockIcon,
-        #eyeIcon {
+        .icon,
+        .eyeIcon {
           position: absolute;
           font-size: 25px;
         }
 
-        .userIcon,
-        .lockIcon {
+        .icon {
           top: 25%;
           left: 3%;
         }
-        #eyeIcon {
+        .eyeIcon {
           top: 25%;
           right: 3%;
           color: #4f728e;
@@ -121,14 +108,19 @@ body {
       border-radius: 10px;
       font-size: 16px;
     }
+    button:disabled {
+      cursor: not-allowed;
+      // background: linear-gradient(red,red);
+    }
     button:hover {
       background: #23de8d;
     }
+  
   }
 }
 
 @media screen and (min-width: 700px) and (max-width: 885px) {
-  .loginSection {
+  .register {
     form {
       width: 690px;
     }
@@ -136,7 +128,7 @@ body {
 }
 
 @media screen and (min-width: 500px) and (max-width: 700px) {
-  .loginSection {
+  .register {
     h3 {
       position: absolute;
       top: 15%;
@@ -153,7 +145,7 @@ body {
 }
 
 @media screen and (min-width: 400px) and (max-width: 500px) {
-  .loginSection {
+  .register {
     h3 {
       position: absolute;
       top: 10%;
@@ -165,7 +157,7 @@ body {
     }
     form {
       width: 400px;
-      .inputBox {
+      .box {
         width: 90%;
         input {
           width: 100%;
@@ -184,7 +176,7 @@ body {
 }
 
 @media screen and (min-width: 300px) and (max-width: 400px) {
-  .loginSection {
+  .register {
     h3 {
       position: absolute;
       top: 10%;
@@ -196,12 +188,11 @@ body {
     }
     form {
       width: 300px;
-      .inputBox {
+      .box {
         width: 90%;
         div {
-          .userIcon,
-          .lockIcon,
-          #eyeIcon {
+          .icon,
+          .eyeIcon {
             font-size: 20px;
             top: 15%;
           }

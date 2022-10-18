@@ -1,4 +1,4 @@
-import "./footer.scss"
+import cls from './footer.module.scss'
 function Footer() {
     const questionsArr = [
         "Java Example Solution Code",
@@ -17,12 +17,12 @@ function Footer() {
         "Java Functional Filtering",
     ]
     return (
-        <div className="footerContainer">
-            <div className="footerBoxes">
+        <footer>
+            <div className={cls.boxes}>
 
-                <div className="footerBox" >
+                <div className={cls.inner} >
                     <h3>Java Help</h3>
-                    <div className="quesitons">
+                    <div className={cls.questions}>
                         {questionsArr.map((questions) => {
 
                             return (
@@ -34,7 +34,7 @@ function Footer() {
                     </div>
                 </div>
 
-                <div className="footerBox">
+                <div className={cls.inner}>
                     <h3>Misc Code Practice</h3>
                     <p> Code Badges</p>
                     <p>Introduction to Mod (video)</p>
@@ -44,7 +44,7 @@ function Footer() {
             </div>
 
             <h4>Copyright <span>Nick Parlante</span> 2017 - privacy</h4>
-        </div>
+        </footer>
     )
 }
 

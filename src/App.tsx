@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Problem, Login, Register, Subject, Main } from "./pages";
-
+import './sass/App.scss'
 const App: FC = () => (
   <div>
     <Routes>
