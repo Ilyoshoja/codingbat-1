@@ -14,7 +14,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path='register' element={<Register />} />
         <Route element={<ProtectedRoute />}>
-          <Route path={isloged ?`/:${id}`: "/"} element={<Main />}>
+          <Route path={isloged ?`/:${id}`: ""} element={<Main />}>
             <Route index element={<Subject />} />
             <Route path='problem' element={<Problem />} />
           </Route>
