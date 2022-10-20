@@ -5,8 +5,8 @@ import Nav from 'react-bootstrap/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import code from "../../assets/img/Coding.svg"
 import bat from "../../assets/img/BAT.svg"
-import java from "../../assets/img/java.svg"
-import python from "../../assets/img/python.svg"
+// import java from "../../assets/img/java.svg"
+// import python from "../../assets/img/python.svg"
 import cls from "./header.module.scss"
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ import { changeLanguageID } from "../../redux/languageID";
 
 const Header: React.FC = () => {
   const [show, setShow] = useState(false);
-  const [isActive, setIsActive] = useState(true);
+  // const [isActive, setIsActive] = useState(true);
   let dispatch = useAppDispatch()
   const languages = useAppSelector(state => state.languages.arr);
   const handleClose = () => setShow(false);
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
           {
             languages.map((lang, index) => {
               return (
-                <div className={cls.icons} onClick={() => setIsActive(true)} key={index}>
+                <div className={cls.icons} key={index}>
                   <p onClick={() => dispatch(changeLanguageID({ index: index, id: lang.id }))}>{lang.title}</p>
                 </div>
               )
