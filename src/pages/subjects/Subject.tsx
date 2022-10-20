@@ -3,7 +3,6 @@ import {  TaskInterFace } from '../../types/interface'
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { GiTrophyCup } from "react-icons/gi";
 import cls from "./subject.module.scss"
-import { useParams } from 'react-router-dom';
 import http from '../../server/http';
 import { useAppSelector } from '../../hooks/hook';
 function Subject() {
