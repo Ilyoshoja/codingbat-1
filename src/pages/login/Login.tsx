@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import cls from './login.module.scss'
 import { AiOutlineEyeInvisible, AiOutlineEye, AiOutlineUser, AiFillLock } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserInterface } from "../../types/interface";
 import { AxiosResponse } from "axios";
 import { http } from "../../server/server"
+import { useAppDispatch, useAppSelector } from "../../hooks/hook";
+import { setValue } from "../../redux/isloggedIn";
+import { setLanguages } from "../../redux/languagesReducer";
+
+
 interface ILogin {
     success: boolean;
     message: string;
@@ -16,18 +21,22 @@ interface ILogin {
     };
 }
 
+
+
 const Login: React.FC = () => {
+
     const [showEye, setShowEye] = useState<boolean>(false);
+    let langId = useAppSelector(state => state.langId.id);
+    let dispatch = useAppDispatch()
+    // let loged = useAppSelector(state => state.islogged.value)
+    let navigate = useNavigate()
 
-
-
+ 
     const [user, setuser] = useState<UserInterface>({
 
         password: "",
         email: '',
     })
-
-
 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,12 +47,26 @@ const Login: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-
-
+        let body = {
+            email: user.email,
+            password: user.password,
+        }
         const { data }: AxiosResponse<ILogin> = (await http.post(
             "/auth/sign-in",
-            { email: user.email, password: user.password },
+            body
         ))
+
+
+        const { data: langData }: AxiosResponse<any> = (await http.get(
+            "/language/list-for-users",
+
+        ))
+
+        dispatch(setValue({value:true, token:data.data.accessToken}))
+        dispatch(setLanguages(langData.data));
+        navigate(`/${langData.data[`${langId}`].id}`)
+        
+
 
         setuser({
 
@@ -51,7 +74,7 @@ const Login: React.FC = () => {
             email: '',
         })
 
-        console.log(data.data.accessToken);
+
 
 
     }

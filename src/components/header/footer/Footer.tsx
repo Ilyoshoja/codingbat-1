@@ -23,11 +23,11 @@ function Footer() {
                 <div className={cls.inner} >
                     <h3>Java Help</h3>
                     <div className={cls.questions}>
-                        {questionsArr.map((questions) => {
+                        {questionsArr.map((questions, index) => {
 
                             return (
 
-                                <p>{questions}</p>
+                                <p key={index}>{questions}</p>
 
                             )
                         })}

@@ -5,26 +5,31 @@ import Nav from 'react-bootstrap/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import code from "../../assets/img/Coding.svg"
 import bat from "../../assets/img/BAT.svg"
-import java from "../../assets/img/java-svgrepo-com 1.svg"
-import python from "../../assets/img/python-svgrepo-com 1.svg"
+import java from "../../assets/img/java.svg"
+import python from "../../assets/img/python.svg"
 import cls from "./header.module.scss"
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from "react-router-dom";
-
+import { useAppDispatch, useAppSelector } from "../../hooks/hook";
+import { changeLanguageID } from "../../redux/languageID";
 
 const Header: React.FC = () => {
   const [show, setShow] = useState(false);
-  // const active = 'active';
   const [isActive, setIsActive] = useState(true);
+  let dispatch = useAppDispatch()
+  const languages = useAppSelector(state => state.languages.arr);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  console.log(languages);
+
+
   return (
     <header>
 
       <Navbar variant="dark" className={cls.navbar}>
         <Container className="d-flex justify-content-around" id={cls["container"]}>
           <Navbar.Brand className={cls.brand}>
-            <div className="logo">
+            <div>
               <img src={code} alt="404" width={123} height={16} />
               <img src={bat} alt="404" width={70} height={16} />
             </div>
@@ -54,7 +59,18 @@ const Header: React.FC = () => {
       <div className={cls.logo}>
         <div className={cls.technologies}>
 
-          <div className={isActive ? cls.active : cls.icons} onClick={() => setIsActive(true)}>
+
+          {
+            languages.map((lang, index) => {
+              return (
+                <div className={cls.icons} onClick={() => setIsActive(true)} key={index}>
+                  <p onClick={() => dispatch(changeLanguageID({ index: index, id: lang.id }))}>{lang.title}</p>
+                </div>
+              )
+            })
+          }
+
+          {/* <div className={isActive ? cls.active : cls.icons} onClick={() => setIsActive(true)}>
             <img src={java} alt="404" />
             <p>Java</p>
           </div>
@@ -62,7 +78,7 @@ const Header: React.FC = () => {
           <div className={isActive ? cls.icons : cls.active} onClick={() => setIsActive(false)}>
             <img src={python} alt="404" />
             <p>Python</p>
-          </div>
+          </div> */}
 
 
         </div>
@@ -70,7 +86,7 @@ const Header: React.FC = () => {
       <Offcanvas show={show} onHide={handleClose} backdrop="static" id={cls["offcanvas"]}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
-            <Navbar.Brand  className={cls.brand}>
+            <Navbar.Brand className={cls.brand}>
               <div className={cls.logo}>
                 <img src={code} alt="404" width={123} height={16} />
                 <img src={bat} alt="404" width={70} height={16} />
