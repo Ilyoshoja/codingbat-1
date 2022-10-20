@@ -131,13 +131,14 @@
       width: 100px;
       height: 60px;
       display: flex;
-      gap: 5px;
+       justify-content: space-around;
       align-items: center;
       color: white;
       cursor: pointer;
       p {
         position: relative;
         top: 8px;
+        text-transform: capitalize;
       }
     }
 

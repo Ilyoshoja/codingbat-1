@@ -6,11 +6,12 @@
   gap: 30px;
 
   .box {
-    width: 100%;
+    width: 90%;
+    margin: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    row-gap: 25px;
+    gap: 30px;
     .card {
       display: flex;
       flex-direction: column;

@@ -64,21 +64,14 @@ const Header: React.FC = () => {
             languages.map((lang, index) => {
               return (
                 <div className={cls.icons} key={index}>
+                   <img src={`https://img.icons8.com/color/344/${lang.url}--v1.png`} alt="404" width={30} height ={30} />
                   <p onClick={() => dispatch(changeLanguageID({ index: index, id: lang.id }))}>{lang.title}</p>
                 </div>
               )
             })
           }
 
-          {/* <div className={isActive ? cls.active : cls.icons} onClick={() => setIsActive(true)}>
-            <img src={java} alt="404" />
-            <p>Java</p>
-          </div>
-
-          <div className={isActive ? cls.icons : cls.active} onClick={() => setIsActive(false)}>
-            <img src={python} alt="404" />
-            <p>Python</p>
-          </div> */}
+         
 
 
         </div>
