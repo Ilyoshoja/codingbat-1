@@ -28,11 +28,11 @@ const Login: React.FC = () => {
     const [showEye, setShowEye] = useState<boolean>(false);
     let langId = useAppSelector(state => state.langId.id);
     let dispatch = useAppDispatch()
-    // let loged = useAppSelector(state => state.islogged.value)
+    // let loged = useAppSelector(state => state.)
     let navigate = useNavigate()
 
- 
-    const [user, setuser] = useState<UserInterface>({
+
+    const [user, setUser] = useState<UserInterface>({
 
         password: "",
         email: '',
@@ -40,7 +40,7 @@ const Login: React.FC = () => {
 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setuser({ ...user, [e.target.name]: e.target.value })
+        setUser({ ...user, [e.target.name]: e.target.value })
     }
 
 
@@ -51,6 +51,8 @@ const Login: React.FC = () => {
             email: user.email,
             password: user.password,
         }
+
+
         const { data }: AxiosResponse<ILogin> = (await http.post(
             "/auth/sign-in",
             body
@@ -62,14 +64,13 @@ const Login: React.FC = () => {
 
         ))
 
-        dispatch(setValue({value:true, token:data.data.accessToken}))
+        dispatch(setValue({ value: true, token: data.data.accessToken }))
         dispatch(setLanguages(langData.data));
         navigate(`/${langData.data[`${langId}`].id}`)
-        
 
 
-        setuser({
 
+        setUser({
             password: "",
             email: '',
         })

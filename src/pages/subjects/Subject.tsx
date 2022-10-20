@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import {  TaskInterFace } from '../../types/interface'
+import { TaskInterFace } from '../../types/interface'
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { GiTrophyCup } from "react-icons/gi";
 import cls from "./subject.module.scss"
@@ -11,8 +11,8 @@ function Subject() {
   let id = useAppSelector(state => state.langId.id);
   let token = useAppSelector(state => state.islogged.token)
   // const { languageID } = useParams();  
-  
- 
+
+
 
 
   useEffect(() => {
