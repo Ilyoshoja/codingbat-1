@@ -121,7 +121,7 @@ const Register: React.FC = () => {
 
 
                 </div>
-                <Link to={"/login"}>Alredy have an account ?</Link>
+                <Link to={"/"}>Alredy have an account ?</Link>
 
 
                 <button disabled={
