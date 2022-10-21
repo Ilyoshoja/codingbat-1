@@ -66,7 +66,7 @@ const Login: React.FC = () => {
 
         dispatch(setValue({ value: true, token: data.data.accessToken }))
         dispatch(setLanguages(langData.data));
-        navigate(`/${langData.data[`${langId}`].id}`)
+        navigate(`/languages/${langData.data[`${langId}`].id}`)
 
 
 

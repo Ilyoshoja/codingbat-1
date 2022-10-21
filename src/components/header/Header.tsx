@@ -5,8 +5,6 @@ import Nav from 'react-bootstrap/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import code from "../../assets/img/Coding.svg"
 import bat from "../../assets/img/BAT.svg"
-// import java from "../../assets/img/java.svg"
-// import python from "../../assets/img/python.svg"
 import cls from "./header.module.scss"
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link, useNavigate } from "react-router-dom";
@@ -31,7 +29,7 @@ const Header: React.FC = () => {
 
    const handleClick = (index:number, id:number) =>{
     dispatch(changeLanguageID({ index: index, id: id }))
-    navigate(`/${id}`)
+    navigate(`/languages/${id}`)
    }
 
 

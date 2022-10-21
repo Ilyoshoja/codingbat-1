@@ -15,9 +15,9 @@ function App() {
         <Route path="" element={<Login />} />
         <Route path='register' element={<Register />} />
         <Route element={<ProtectedRoute />}>
-          <Route path={`/:${id}`} element={<Main />}>
+          <Route path={`/languages/:${id}`} element={<Main />}>
             <Route index element={<Subject />} />
-            <Route path={`/:${id}/problem`} element={<Problem />} />
+            <Route path={`/languages/:${id}/problem`} element={<Problem />} />
           </Route>
         </Route>
       </Routes>

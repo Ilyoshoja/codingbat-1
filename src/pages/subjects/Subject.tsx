@@ -11,7 +11,7 @@ function Subject() {
 
   const [arr, setArr] = useState<TaskInterFace[]>([])
   let id = useAppSelector(state => state.langId.id);
-  console.log(id);
+
   
   let token = useAppSelector(state => state.islogged.token)
   
@@ -20,7 +20,7 @@ function Subject() {
   
    const handleClick = (taskid:number) =>{
      const task = arr.find(task => task.id === taskid);
-     navigate(`/${id}/problem`,{ state:task})
+     navigate(`/languages/${id}/problem`,{ state:task})
      
    }
 
