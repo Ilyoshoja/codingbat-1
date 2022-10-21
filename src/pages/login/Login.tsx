@@ -26,7 +26,7 @@ interface ILogin {
 const Login: React.FC = () => {
 
     const [showEye, setShowEye] = useState<boolean>(false);
-    let langId = useAppSelector(state => state.langId.id);
+    let langId = useAppSelector(state => state.langId.index);
     let dispatch = useAppDispatch()
     // let loged = useAppSelector(state => state.)
     let navigate = useNavigate()

@@ -6,6 +6,7 @@ function App() {
 
   let id = useAppSelector(state => state.langId.id);
 
+  
 
 
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route path={`/:${id}`} element={<Main />}>
             <Route index element={<Subject />} />
-            <Route path='problem' element={<Problem />} />
+            <Route path={`/:${id}/problem`} element={<Problem />} />
           </Route>
         </Route>
       </Routes>

@@ -1,21 +1,29 @@
 import React, { useState } from "react";
 import cls from "./register.module.scss"
 import { AiOutlineEyeInvisible, AiOutlineEye, AiOutlineUser, AiFillLock } from "react-icons/ai";
-import { Link } from "react-router-dom";
-import { UserInterface } from "../../types/interface";
+import { Link, useNavigate } from "react-router-dom";
+import { AlertInterFace, UserInterface } from "../../types/interface";
 import { AxiosResponse } from "axios";
 import { http } from "../../server/server"
+import CustomizedSnackbars from "../../components/snackbar/CustomizedSnackbars";
+
 
 
 interface IRegister {
-    success: boolean;
+    success: boolean,
+    
 }
+
+
 
 const Register: React.FC = () => {
     const [showEye, setShowEye] = useState<boolean>(false);
-
-
-
+    let navigate = useNavigate();
+    const [alert, setAlert] = useState<AlertInterFace>({
+        showAlert:false,
+        msg:""
+    });
+ 
 
     const [user, setuser] = useState<UserInterface>({
 
@@ -35,10 +43,34 @@ const Register: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+
         const { data }: AxiosResponse<IRegister> = (await http.post(
             "/auth/sign-up",
             { email: user.email, password: user.password },
+
+            
         ))
+
+        const { data: email }: AxiosResponse<any> = (await http.get(
+            `auth/verification-email/${user.email}`,
+
+        ))
+
+
+
+        if(email.success === true && email.message === "Tasdiqlandi"){
+                  
+            navigate('/')
+        }
+
+        
+
+        else if (data.success === false){
+            setAlert({ msg: "Bunday Email Oldindan Mavjud", showAlert:true})
+        }
+
+
 
         setuser({
 
@@ -46,16 +78,17 @@ const Register: React.FC = () => {
             email: '',
         })
 
-        console.log(data);
+     
 
+
+       
+       
     }
 
 
 
 
-    return (
-
-
+    return ( 
         <div className={cls.register}>
             <h3>Sign Up</h3>
 
@@ -97,6 +130,8 @@ const Register: React.FC = () => {
                     user.password.length < 8
                 }  >Sign Up</button>
             </form>
+
+            <CustomizedSnackbars alert= {alert}/>
 
         </div>
     )

@@ -2,16 +2,22 @@ import React from "react";
 import cls from "./problem.module.scss"
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { BsPencil } from "react-icons/bs";
+import { useLocation } from "react-router-dom";
+import { log } from "console";
 
-interface ProblemProps { }
 
-const Problem: React.FC<ProblemProps> = () => {
+
+const Problem: React.FC = () => {
+    let task = useLocation();
+    console.log(task);
+
+
     return (
         <div className={cls.problem}>
             <div className={cls.card}>
                 <div className={cls.title}>
                     <div className={cls.text}>
-                        <h3>Warmap-1</h3>
+                        <h3>{task.state.title}</h3>
                         <div>
                             <i id={cls.icon_1}><AiFillStar /></i>
                             <i id={cls.icon_1}><AiFillStar /></i>
@@ -29,7 +35,7 @@ const Problem: React.FC<ProblemProps> = () => {
                     </div>
 
                 </div>
-                <p>Simple warmup problems to get started (solutions available). New videos: String Introduction, String Substring, If Boolean Logic 1, If Boolean Logic 2</p>
+                <p>{task.state.description}</p>
             </div>
         </div>
     )

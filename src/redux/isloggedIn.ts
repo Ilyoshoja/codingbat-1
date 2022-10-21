@@ -11,9 +11,15 @@ const isloggedInSlice = createSlice({
       state.token = action.payload.token;
       localStorage.setItem('auth', JSON.stringify(state));
     },
+    
+    logOut: (state, action: PayloadAction<boolean>) => {
+      state.value = action.payload;
+      localStorage.setItem('auth', JSON.stringify(state));
+    }
+
   },
 });
 
 export default isloggedInSlice.reducer;
-export const { setValue } = isloggedInSlice.actions;
+export const { setValue, logOut } = isloggedInSlice.actions;
 export const isloged = (state: RootState) => state.islogged;

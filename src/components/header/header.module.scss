@@ -28,6 +28,11 @@
     background: #3fc88d;
   }
 
+  .logout{
+    background-color: red;
+    border: none;
+  }
+
   .hamburger {
     display: none;
     flex-direction: column;
@@ -47,7 +52,7 @@
   color: #2db97c;
 }
 #btndark,
-#btngreen {
+#btngreen, .logout {
   width: 133px;
   height: 48px;
   color: white;
@@ -71,17 +76,17 @@
     align-items: center;
     border: none;
   }
-  #btndark,#btngreen {
-  width: 133px;
-  height: 48px;
-  color: white;
-  border-radius: 10px;
-  text-decoration: none;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  }
+  // #btndark,#btngreen {
+  // width: 133px;
+  // height: 48px;
+  // color: white;
+  // border-radius: 10px;
+  // text-decoration: none;
+  // text-align: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // }
   #btndark{
     background: rgb(8, 41, 56);
     color: white;
@@ -97,6 +102,11 @@
   #btngreen:hover {
     background: #3fc88d;
     color: white;
+  }
+
+  .logout{
+    background-color: red;
+    border: none;
   }
 }
 

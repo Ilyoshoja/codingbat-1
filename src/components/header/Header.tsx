@@ -9,18 +9,30 @@ import bat from "../../assets/img/BAT.svg"
 // import python from "../../assets/img/python.svg"
 import cls from "./header.module.scss"
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/hook";
-import { changeLanguageID } from "../../redux/languageID";
+import { changeLanguageID, setLanguageID } from "../../redux/languageID";
+import { logOut } from "../../redux/isloggedIn";
 
 const Header: React.FC = () => {
+  let navigate = useNavigate()
   const [show, setShow] = useState(false);
   // const [isActive, setIsActive] = useState(true);
   let dispatch = useAppDispatch()
   const languages = useAppSelector(state => state.languages.arr);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  console.log(languages);
+  const isloged = useAppSelector(state => state.islogged.value)
+
+  const logout = () => {
+    dispatch(logOut(false));
+    dispatch(setLanguageID({ index: 0, id: 1 }))
+  }
+
+   const handleClick = (index:number, id:number) =>{
+    dispatch(changeLanguageID({ index: index, id: id }))
+    navigate(`/${id}`)
+   }
 
 
   return (
@@ -45,8 +57,9 @@ const Header: React.FC = () => {
           </Nav>
 
           <Nav className={`${cls.link}`} id={cls['gap-3']} >
-            <Link to={'/register'} id={cls["btndark"]}  >Sign Up</Link >
-            <Link to={'/login'} id={cls["btngreen"]} >Sign In</Link >
+            <Link to={'/register'} id={cls["btndark"]} style={{ display: isloged ? "none" : 'block' }}>Sign Up</Link >
+            <Link to={'/login'} id={cls["btngreen"]} style={{ display: isloged ? "none" : 'block' }}>Sign In</Link >
+            <button style={{ display: isloged ? 'block' : "none" }} className={cls.logout} onClick={logout}>Log Out</button>
           </Nav>
 
           <Nav className={cls.hamburger} onClick={handleShow}>
@@ -56,6 +69,8 @@ const Header: React.FC = () => {
           </Nav>
         </Container>
       </Navbar>
+
+
       <div className={cls.logo}>
         <div className={cls.technologies}>
 
@@ -64,18 +79,20 @@ const Header: React.FC = () => {
             languages.map((lang, index) => {
               return (
                 <div className={cls.icons} key={index}>
-                   <img src={`https://img.icons8.com/color/344/${lang.url}--v1.png`} alt="404" width={30} height ={30} />
-                  <p onClick={() => dispatch(changeLanguageID({ index: index, id: lang.id }))}>{lang.title}</p>
+                  <img src={`https://img.icons8.com/color/344/${lang.url}--v1.png`} alt="404" width={30} height={30} />
+                  <p onClick={() =>handleClick(index, lang.id)}>{lang.title}</p>
                 </div>
               )
             })
           }
 
-         
+
 
 
         </div>
       </div>
+
+
       <Offcanvas show={show} onHide={handleClose} backdrop="static" id={cls["offcanvas"]}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
@@ -97,8 +114,9 @@ const Header: React.FC = () => {
           </Nav>
 
           <Nav className="d-flex justify-content-around ">
-            <Link to={'/register'} id={cls["btndark"]}   >Sign Up</Link >
-            <Link to={'/login'} id={cls["btngreen"]}  >Sign Up</Link >
+            <Link to={'/register'} id={cls["btndark"]} style={{ display: isloged ? "none" : 'block' }}>Sign Up</Link >
+            <Link to={'/login'} id={cls["btngreen"]} style={{ display: isloged ? "none" : 'block' }}>Sign In</Link >
+            <button style={{ display: isloged ? 'block' : "none" }} className={cls.logout} onClick={logout}>Log Out</button>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>

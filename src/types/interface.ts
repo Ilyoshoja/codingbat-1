@@ -39,3 +39,8 @@ export interface TaskInterFace {
   tryCount: number;
   url: string;
 }
+
+export interface AlertInterFace {
+  showAlert: boolean,
+  msg: string
+}

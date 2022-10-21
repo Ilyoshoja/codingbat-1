@@ -5,12 +5,24 @@ import { GiTrophyCup } from "react-icons/gi";
 import cls from "./subject.module.scss"
 import http from '../../server/http';
 import { useAppSelector } from '../../hooks/hook';
+import { useNavigate } from 'react-router-dom';
+
 function Subject() {
 
   const [arr, setArr] = useState<TaskInterFace[]>([])
   let id = useAppSelector(state => state.langId.id);
+  console.log(id);
+  
   let token = useAppSelector(state => state.islogged.token)
-  // const { languageID } = useParams();  
+  
+   let navigate = useNavigate()
+  
+  
+   const handleClick = (taskid:number) =>{
+     const task = arr.find(task => task.id === taskid);
+     navigate(`/${id}/problem`,{ state:task})
+     
+   }
 
 
 
@@ -27,16 +39,18 @@ function Subject() {
 
   const [isActive, setIsActive] = useState(true);
 
+ 
 
   return (
     <div className={cls.subject}>
       <div className={cls.box}>
         {arr.map((task, index) => {
           return (
-            <div className={cls.card} key={index}>
+            <div className={cls.card} key={index}  onClick= {() => handleClick(task.id)}>
               <div className={cls.title}>
                 <h3>{task.title}</h3>
-                <div>
+                <div> 
+                  
                   <i className={cls.filledIcon}><AiFillStar /></i>
                   <i className={cls.filledIcon}><AiFillStar /></i>
                   <i className={cls.filledIcon}><AiFillStar /></i>
